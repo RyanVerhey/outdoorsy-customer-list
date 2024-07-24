@@ -1,0 +1,6 @@
+type argv = ::Array[::String]
+type filename = ::String
+type delimiter = ::String
+type headers = ::Array[String]
+type sort = String
+type row_list = ::Array[::Hash[::String, ::String]]

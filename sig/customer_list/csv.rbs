@@ -1,0 +1,12 @@
+module CustomerList
+  # Reads a CSV file and outputs as an instance of a Data class
+  class CSV
+    @filename: filename
+    @delimiter: delimiter
+    @headers: headers
+
+    def initialize: (filename: filename, delimiter: delimiter, headers: headers) -> void
+
+    def read: () -> row_list
+  end
+end
