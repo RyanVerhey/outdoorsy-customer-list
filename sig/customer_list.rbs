@@ -1,0 +1,3 @@
+module CustomerList
+  def self.run: (filename: filename, delimiter: delimiter, headers: headers, sort: sort?) -> void
+end
