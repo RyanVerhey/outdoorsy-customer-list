@@ -6,7 +6,7 @@ module CustomerList
 
     def initialize: (argv argv) -> void
 
-    def run: () -> untyped
+    def run: () -> void
 
     # Represents the options that can be passed to the CLI
     class Options
@@ -20,21 +20,21 @@ module CustomerList
 
       def initialize: () -> void
 
-      def parse: (argv options) -> untyped
+      def parse: (argv options) -> void
 
       def to_h: () -> ::Hash[::Symbol, ::String?]
 
       private
 
-      def validate_options: (argv options) -> untyped
+      def validate_options: (argv options) -> void
 
-      def define_options: (OptionParser parser) -> untyped
+      def define_options: (OptionParser parser) -> void
 
-      def perform_delimiter_option: (OptionParser parser) -> untyped
+      def perform_delimiter_option: (OptionParser parser) -> void
 
-      def perform_headers_option: (OptionParser parser) -> untyped
+      def perform_headers_option: (OptionParser parser) -> void
 
-      def perform_sort_option: (OptionParser parser) -> untyped
+      def perform_sort_option: (OptionParser parser) -> void
     end
   end
 end
