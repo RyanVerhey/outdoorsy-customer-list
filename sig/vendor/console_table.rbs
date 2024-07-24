@@ -1,0 +1,9 @@
+module ConsoleTable
+  type table_config_row = {
+    key: ::String,
+    size: ::String,
+    title: ::String
+  }
+
+  def self.define: (::Array[table_config_row]) { (::Array[::Hash[untyped, untyped]]) -> void } -> void
+end

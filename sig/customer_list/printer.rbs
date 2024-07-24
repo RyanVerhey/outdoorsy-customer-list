@@ -1,0 +1,18 @@
+module CustomerList
+  # Prints the customer list
+  class Printer
+    @list: row_list
+    @headers: headers
+
+    attr_reader list: row_list
+    attr_reader headers: headers
+
+    def initialize: (list: row_list, headers: headers) -> void
+
+    def print: () -> void
+
+    private
+
+    def table_config: () -> ::Array[ConsoleTable::table_config_row]
+  end
+end
