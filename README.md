@@ -53,16 +53,17 @@ The only exception to the above is that the rows can also be sorted by full name
 ```
 
 ## Test Suite
+### Tests
 To run the tests, use Rake:
 ```sh
 bundle exec rake test
 ```
-
+### Linter
 To run the Rubocop linter:
 ```sh
 bundle exec rubocop
 ```
-
+### Type Checker
 To run the Steep type checker, first you need to install the RBS gem collection:
 ```sh
 bundle exec rbs collection update
