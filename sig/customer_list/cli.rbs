@@ -1,0 +1,40 @@
+module CustomerList
+  # Command line interface for the customer list
+  class CLI
+    @argv: argv
+    attr_reader argv: argv
+
+    def initialize: (argv argv) -> void
+
+    def run: () -> untyped
+
+    # Represents the options that can be passed to the CLI
+    class Options
+      @parsed: bool
+
+      VALID_OPTIONS: ::Array[:delimiter | :headers | :sort]
+
+      attr_accessor delimiter: delimiter
+      attr_accessor headers: headers
+      attr_accessor sort: sort?
+
+      def initialize: () -> void
+
+      def parse: (argv options) -> untyped
+
+      def to_h: () -> ::Hash[::Symbol, ::String?]
+
+      private
+
+      def validate_options: (argv options) -> untyped
+
+      def define_options: (OptionParser parser) -> untyped
+
+      def perform_delimiter_option: (OptionParser parser) -> untyped
+
+      def perform_headers_option: (OptionParser parser) -> untyped
+
+      def perform_sort_option: (OptionParser parser) -> untyped
+    end
+  end
+end
