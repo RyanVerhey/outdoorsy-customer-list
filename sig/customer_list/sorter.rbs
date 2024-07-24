@@ -1,0 +1,13 @@
+module CustomerList
+  class Sorter
+    @list: row_list
+    @sort_field: sort
+
+    attr_reader list: row_list
+    attr_reader sort_field: sort
+
+    def initialize: (list: row_list, sort_field: sort) -> void
+
+    def sort: () -> row_list
+  end
+end
