@@ -3,6 +3,8 @@
 ## About
 For-fun sample project.
 
+Premise: A small tool for a fictional company called Outdoor.sy that takes some of their customer lists and returns the data in different sorted orders
+
 **Requirements**:
 - Add data from a given file
   - By default, files will have the following headers: First name, Last name, Email, Vehicle type, Vehicle name, and Vehicle length
@@ -48,20 +50,21 @@ The only exception to the above is that the rows can also be sorted by full name
 ```
 
 ## Test Suite
-This test suite has 100% code coverage.
+This test suite has 100% code coverage, and no linter or type errors.
 
 ### Tests
-To run the tests, use Rake:
+This codebase uses Rake & MiniTest for unit tests. The tests are stored in the `test/` directory. To run the tests:
 ```sh
 bundle exec rake test
 ```
 ### Linter
-To run the Rubocop linter:
+We use Rubocop for linting. To run the linter:
 ```sh
 bundle exec rubocop
 ```
 ### Type Checker
-To run the Steep type checker, first you need to install the RBS gem collection:
+We use RBS, via Steep, for type checking. Type definitions are stored in the `sig/` directory.
+To run the type checker, first you need to install the RBS gem collection:
 ```sh
 bundle exec rbs collection update
 ```
