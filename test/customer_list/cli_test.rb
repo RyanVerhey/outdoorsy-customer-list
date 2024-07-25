@@ -39,7 +39,11 @@ class CustomerList::CLITest < Minitest::Test
       skip 'TBD'
     end
 
-    def test_parse_raises_error_when_sort_field_not_in_headers
+    def test_parse_raises_error_when_sort_field_not_in_headers_or_full_name
+      skip 'TBD'
+    end
+
+    def test_parse_raises_error_when_sort_is_full_name_but_no_first_last_name
       skip 'TBD'
     end
 

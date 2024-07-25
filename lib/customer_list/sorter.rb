@@ -11,7 +11,13 @@ module CustomerList
     end
 
     def sort
-      list.sort_by { _1[sort_field] }
+      list.sort_by do |row|
+        if @sort_field == FULL_NAME_SORT_FIELD
+          "#{row[FIRST_NAME_SORT_FIELD]} #{row[LAST_NAME_SORT_FIELD]}"
+        else
+          row[sort_field]
+        end
+      end
     end
   end
 end

@@ -7,4 +7,8 @@ class CustomerList::SorterTest < Minitest::Test
   def test_sorts_list_by_field
     skip 'TBD'
   end
+
+  def test_can_sort_by_full_name
+    skip 'TBD'
+  end
 end

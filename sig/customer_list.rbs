@@ -1,3 +1,7 @@
 module CustomerList
+  FULL_NAME_SORT_FIELD: 'full_name'
+  FIRST_NAME_SORT_FIELD: 'first_name'
+  LAST_NAME_SORT_FIELD: 'last_name'
+
   def self.run: (filename: filename, delimiter: delimiter, headers: headers, sort: sort?) -> void
 end

@@ -35,6 +35,14 @@ module CustomerList
       def perform_headers_option: (OptionParser parser) -> void
 
       def perform_sort_option: (OptionParser parser) -> void
+
+      def validate_file: (argv options) -> void
+
+      def validate_headers: (headers headers) -> void
+
+      def validate_delimiter: (delimiter delimiter) -> void
+
+      def validate_sort: (sort? sort) -> void
     end
   end
 end

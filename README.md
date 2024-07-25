@@ -11,7 +11,6 @@ For-fun sample project.
 
 ## Development Checklist
 - [ ] Write tests
-- [ ] Accept `full_name` as a sorting option
 - [ ] Add additional documentation as needed
 
 ## Installation

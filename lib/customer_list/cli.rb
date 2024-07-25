@@ -56,10 +56,10 @@ module CustomerList
       private
 
       def validate_options(options)
-        raise ArgumentError, 'No file provided' if options.empty?
-        raise ArgumentError, 'Headers must be provided' if headers.empty?
-        raise ArgumentError, 'Delimiter must be provided' if delimiter.nil?
-        raise ArgumentError, 'Sort field must be one of headers' if sort && !headers.include?(sort)
+        validate_file(options)
+        validate_headers(headers)
+        validate_delimiter(delimiter)
+        validate_sort(sort)
       end
 
       def define_options(parser)
@@ -92,6 +92,29 @@ module CustomerList
         parser.on('-s', '--sort [FIELD]', 'Sort by the given field') do |sort|
           self.sort = sort
         end
+      end
+
+      def validate_file(options)
+        raise ArgumentError, 'No file provided' if options.empty?
+      end
+
+      def validate_headers(headers)
+        raise ArgumentError, 'Headers must be provided' if headers.empty?
+      end
+
+      def validate_delimiter(delimiter)
+        raise ArgumentError, 'Delimiter must be provided' if delimiter.nil?
+      end
+
+      def validate_sort(sort)
+        return unless sort
+
+        if sort && (!headers.include?(sort) || sort == FULL_NAME_SORT_FIELD)
+          raise ArgumentError, 'Sort field must be one of headers'
+        end
+        return unless sort == 'full_name' && (headers & %w[first_name last_name]).size < 2
+
+        raise ArgumentError, 'Can only sort on full name if first and last name are present'
       end
     end
   end
