@@ -16,10 +16,11 @@ module CustomerList
     def run
       options = Options.new
       options.parse(@argv)
+      opt_hash = options.to_h
       filename = @argv.first.to_s
-      delimiter = @options[:delimiter]
-      headers = @options[:headers]
-      sort = @options[:sort]
+      delimiter = opt_hash[:delimiter]
+      headers = opt_hash[:headers]
+      sort = opt_hash[:sort]
 
       CustomerList.run(filename:, delimiter:, headers:, sort:)
     end
@@ -103,13 +104,13 @@ module CustomerList
       end
 
       def validate_delimiter(delimiter)
-        raise ArgumentError, 'Delimiter must be provided' if delimiter.nil?
+        raise ArgumentError, 'Delimiter must be provided' if delimiter.empty?
       end
 
       def validate_sort(sort)
         return unless sort
 
-        if sort && (!headers.include?(sort) || sort == FULL_NAME_SORT_FIELD)
+        if sort && (!headers.include?(sort) && sort != FULL_NAME_SORT_FIELD)
           raise ArgumentError, 'Sort field must be one of headers'
         end
         return unless sort == 'full_name' && (headers & %w[first_name last_name]).size < 2

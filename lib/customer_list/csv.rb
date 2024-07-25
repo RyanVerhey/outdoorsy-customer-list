@@ -12,11 +12,7 @@ module CustomerList
     end
 
     def read
-      rows = []
-      ::CSV.foreach(@filename, headers: @headers, col_sep: @delimiter) do |row|
-        rows << row.to_h
-      end
-      rows
+      ::CSV.foreach(@filename, headers: @headers, col_sep: @delimiter).map(&:to_h)
     end
   end
 end

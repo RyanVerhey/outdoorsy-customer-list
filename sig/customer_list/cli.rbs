@@ -22,7 +22,7 @@ module CustomerList
 
       def parse: (argv options) -> void
 
-      def to_h: () -> ::Hash[::Symbol, ::String?]
+      def to_h: () -> { delimiter: delimiter, headers: headers, sort: sort? }
 
       private
 

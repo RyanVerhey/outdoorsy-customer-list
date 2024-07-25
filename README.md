@@ -10,7 +10,6 @@ For-fun sample project.
 - Sort the data
 
 ## Development Checklist
-- [ ] Write tests
 - [ ] Add additional documentation as needed
 
 ## Installation
@@ -52,6 +51,8 @@ The only exception to the above is that the rows can also be sorted by full name
 ```
 
 ## Test Suite
+This test suite has 100% code coverage.
+
 ### Tests
 To run the tests, use Rake:
 ```sh

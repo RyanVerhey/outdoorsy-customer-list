@@ -5,6 +5,12 @@ AllCops:
 Style/ClassAndModuleChildren:
   Enabled: false
 
+Metrics/MethodLength:
+  CountAsOne:
+    - array
+    - hash
+    - method_call
+
 require:
   - rubocop-minitest
   - rubocop-rake
