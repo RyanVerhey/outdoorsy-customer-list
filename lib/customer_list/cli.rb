@@ -47,6 +47,7 @@ module CustomerList
       end
 
       def to_h
+        # Outputting the options so they can be read later
         raise 'Options not parsed yet' unless @parsed
 
         VALID_OPTIONS.each_with_object({}) do |option, hash|
@@ -110,9 +111,12 @@ module CustomerList
       def validate_sort(sort)
         return unless sort
 
-        if sort && (!headers.include?(sort) && sort != FULL_NAME_SORT_FIELD)
+        # We want to make sure that the sort field is either in the headers or is full_name
+        if !headers.include?(sort) && sort != FULL_NAME_SORT_FIELD
           raise ArgumentError, 'Sort field must be one of headers'
         end
+
+        # Checking that headers includes first and last name if sorting by full name
         return unless sort == 'full_name' && (headers & %w[first_name last_name]).size < 2
 
         raise ArgumentError, 'Can only sort on full name if first and last name are present'

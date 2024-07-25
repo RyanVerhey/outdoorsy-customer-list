@@ -9,9 +9,6 @@ For-fun sample project.
 - Display the information from the file
 - Sort the data
 
-## Development Checklist
-- [ ] Add additional documentation as needed
-
 ## Installation
 Prerequisites:
 - bundler

@@ -12,6 +12,7 @@ module CustomerList
 
     def sort
       list.sort_by do |row|
+        # If the sort field is full_name, sort by first_name and last_name
         if @sort_field == FULL_NAME_SORT_FIELD
           "#{row[FIRST_NAME_SORT_FIELD]} #{row[LAST_NAME_SORT_FIELD]}"
         else

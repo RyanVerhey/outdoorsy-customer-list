@@ -10,6 +10,7 @@ end
 
 require 'minitest/autorun'
 
+# Helper class for generating CSV files
 class CSVHelper
   attr_reader :filepath
 
