@@ -53,17 +53,17 @@ The only exception to the above is that the rows can also be sorted by full name
 This test suite has 100% code coverage, and no linter or type errors.
 
 ### Tests
-This codebase uses Rake & MiniTest for unit tests. The tests are stored in the `test/` directory. To run the tests:
+This codebase uses [Rake](https://github.com/ruby/rake) & [MiniTest](https://github.com/minitest/minitest) for unit tests. The tests are stored in the `test/` directory. To run the tests:
 ```sh
 bundle exec rake test
 ```
 ### Linter
-We use Rubocop for linting. To run the linter:
+We use [Rubocop](https://github.com/rubocop/rubocop) for linting. To run the linter:
 ```sh
 bundle exec rubocop
 ```
 ### Type Checker
-We use RBS, via Steep, for type checking. Type definitions are stored in the `sig/` directory.
+We use [RBS](https://github.com/ruby/rbs), via [Steep](https://github.com/soutaro/steep), for type checking. Type definitions are stored in the `sig/` directory.
 To run the type checker, first you need to install the RBS gem collection:
 ```sh
 bundle exec rbs collection update
